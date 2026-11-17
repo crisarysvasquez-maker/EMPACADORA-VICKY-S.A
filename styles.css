@@ -1,0 +1,488 @@
+/* RESET Y VARIABLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f7f6f2; /* Color crema de tu mockup */
+    color: #1a1a1a;
+}
+
+/* NAVEGACIÓN */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: transparent;
+}
+
+.logo {
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.menu-enlaces {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-enlaces a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+.carrito-icono {
+    cursor: pointer;
+    background-color: #000000; /* Verde marca */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* HERO (BANNER) */
+/* ACTUALIZAMOS EL HERO PARA INCLUIR LAS HOJAS DE FONDO */
+/* CONTENEDOR PRINCIPAL DEL HERO */
+/* SECCIÓN HERO Y PALMAS DESENFOCADAS */
+/* SECCIÓN HERO - Ajustamos el tamaño de las palmas de fondo */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    
+    /* Reducimos el tamaño de las palmas de fondo de 320px/350px a 200px/220px */
+    background-image: 
+        url('palma iz.png'), 
+        url('palma dr.png');
+    background-position: -20px -20px, calc(100% + 20px) -20px;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 200px, 220px; 
+}
+
+/* Efecto de desenfoque sutil para las palmas */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    backdrop-filter: blur(1px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* LADO IZQUIERDO (TEXTO) */
+.hero-izquierda {
+    flex: 1.1;
+    position: relative;
+    z-index: 2;
+    padding-right: 20px;
+}
+
+.hero-texto h1 {
+    font-size: 46px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    color: #1a1a1a;
+}
+
+.hero-texto p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #444;
+}
+
+/* LADO DERECHO (IMAGEN PRINCIPAL MÁS GRANDE) */
+.hero-derecha {
+    flex: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.img-producto-flotante {
+    width: 100%;
+    max-width: 620px; /* <--- Aumentamos considerablemente el tamaño para que luzca imponente */
+    filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.2));
+    transition: transform 0.4s ease;
+}
+
+.img-producto-flotante:hover {
+    transform: translateY(-8px);
+}
+
+/* CARACTERÍSTICAS */
+.caracteristicas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 40px;
+    border-bottom: 1px solid #eae8e1;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.item-caracteristica {
+    text-align: center;
+    padding: 0 40px;
+}
+
+.separador {
+    border-left: 1px solid #dcdad1;
+    border-right: 1px solid #dcdad1;
+}
+
+.icono-verde {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* GALERÍA DE USOS */
+.galeria-usos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 60px auto;
+}
+
+.tarjeta-uso {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 200px;
+}
+
+.placeholder-foto {
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+}
+
+.titulo-uso {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 15px 15px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* SOBRE NOSOTROS */
+.sobre-nosotros {
+    text-align: center;
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.sobre-nosotros h2 {
+    color: #9e2a2b; /* Tono rojizo del diseño */
+    margin-bottom: 15px;
+}
+
+.sobre-nosotros p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+.footer-verde {
+    background-color: #c4aa00;
+    color: white;
+    text-align: center;
+    padding: 40px 20px 20px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.telefonos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.telefonos img {
+    vertical-align: middle;
+}
+
+.info-legal {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   AQUÍ ABAJO ESTÁN LOS ESTILOS DEL CATÁLOGO Y MODAL QUE YA TENÍAMOS
+   ========================================= */
+
+.contenedor-catalogo { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+.titulo-seccion { text-align: center; margin-bottom: 40px; font-size: 32px; }
+.grid-productos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.tarjeta-producto { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; padding-bottom: 20px;}
+.imagen-placeholder { height: 200px; background-color: #e0e6ed; display: flex; justify-content: center; align-items: center; color: #8795a1; }
+.info-producto { padding: 20px; }
+.precio { display: block; font-size: 22px; font-weight: bold; color: #000000; margin: 10px 0; }
+.btn-agregar { width: 90%; padding: 10px; background-color: #1a1a1a; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+
+.control-cantidad { display: flex; justify-content: center; align-items: center; margin-bottom: 15px; gap: 10px; }
+.btn-restar, .btn-sumar { width: 35px; height: 35px; background-color: #f4f6f7; border: 1px solid #ddd; border-radius: 5px; font-size: 20px; cursor: pointer; color: #2c3e50; font-weight: bold; display: flex; justify-content: center; align-items: center; }
+.input-cantidad { width: 50px; height: 35px; text-align: center; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; color: #2c3e50; font-weight: bold; }
+.input-cantidad::-webkit-inner-spin-button, .input-cantidad::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+
+.modal-oculto { display: none; }
+.modal-visible { display: flex !important; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.75); z-index: 9999; justify-content: center; align-items: center; }
+.modal-contenido { background-color: white; padding: 25px; border-radius: 12px; width: 90%; max-width: 350px; max-height: 90vh; overflow-y: auto; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+.modal-contenido h2 { margin-bottom: 20px; color: #1a1a1a; }
+#lista-carrito { margin-bottom: 20px; max-height: 250px; overflow-y: auto; }
+.item-carrito { display: flex; justify-content: space-between; margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 8px; color: #1a1a1a; }
+.control-carrito { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.btn-cantidad-carrito { background-color: #f4f6f7; border: 1px solid #ddd; border-radius: 4px; width: 24px; height: 24px; cursor: pointer; font-weight: bold; display: flex; justify-content: center; align-items: center; font-size: 14px; }
+.modal-total { font-size: 22px; text-align: right; margin-bottom: 20px; color: #1a1a1a; }
+.modal-botones { display: flex; gap: 10px; }
+.btn-secundario, .btn-whatsapp { padding: 12px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; flex: 1; font-size: 15px; text-align: center; }
+.btn-secundario { background-color: #e0e6ed; color: #1a1a1a; }
+.btn-whatsapp { background-color: #2baf55; color: white; }
+
+/* Contenedor relativo para que los elementos hijos se puedan superponer */
+.hero-imagen {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    min-height: 400px;
+}
+
+/* Estilo para el coco que va atrás */
+.img-coco-atras {
+    position: absolute;
+    width: 260px; /* Ajusta el tamaño a tu gusto */
+    z-index: 1;   /* Lo manda a la capa de atrás */
+    filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.15));
+    /* Si quieres moverlo un poco a la izquierda o derecha del empaque, usa esto: */
+    transform: translateX(-40px) translateY(20px); 
+}
+
+/* Aseguramos que el empaque quede por encima del coco */
+.img-producto-flotante {
+    width: 100%;
+    max-width: 450px;
+    filter: drop-shadow(0px 20px 25px rgba(0, 0, 0, 0.18));
+    transition: transform 0.4s ease;
+}
+
+.img-producto-flotante:hover {
+    transform: translateY(-8px);
+}
+
+.galeria-usos-contenedor {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.grid-usos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estilo para que las fotos de las recetas cubran perfectamente su tarjeta */
+.tarjeta-uso {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 320px; /* <--- Aumentamos la altura de 220px a 320px para que respiren mejor */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    background-color: #fff; /* Fondo blanco sutil por si la foto no llena todo el ancho */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto-uso-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción sin deformar */
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* Efecto de zoom elegante al pasar el cursor */
+.tarjeta-uso:hover .foto-uso-img {
+    transform: scale(1.03);
+}
+
+/* Contenedor de la imagen en las tarjetas de pedido */
+.contenedor-imagen-producto {
+    width: 100%;
+    height: 250px;
+    background-color: #f4f3ef; /* Fondo sutil para que luzcan las fotos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 15px;
+}
+
+.img-producto-catalogo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Muestra el producto completo sin recortarlo */
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-producto:hover .img-producto-catalogo {
+    transform: scale(1.05); /* Pequeño zoom al pasar el mouse */
+}
+
+/* SECCIÓN CATÁLOGO */
+.seccion-catalogo {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.grid-catalogo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas lado a lado */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.tarjeta-producto {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-imagen-producto {
+    width: 100%;
+    height: 250px;
+    background-color: #f4f3ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 15px;
+}
+
+.img-producto-catalogo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-producto:hover .img-producto-catalogo {
+    transform: scale(1.05);
+}
+
+.info-producto {
+    padding: 25px;
+    text-align: center;
+}
+
+.info-producto h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+
+.info-producto p {
+    color: #666;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.precio {
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+/* CONTROLES DE CANTIDAD Y BOTÓN */
+.control-cantidad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.control-cantidad button {
+    width: 35px;
+    height: 35px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.control-cantidad button:hover {
+    background: #e0e0e0;
+}
+
+.control-cantidad input {
+    width: 45px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 35px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-anadir {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+.btn-anadir:hover {
+    background-color: #219653;
+}
